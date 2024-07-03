@@ -1,0 +1,127 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background: linear-gradient(45deg, #f06291, #fffde7);
+}
+
+.conteiner {
+  min-height: 100vh;
+  min-width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.calculator {
+  position: relative;
+  background: #fff;
+  width: auto;
+  height: auto;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 30px rgb(187, 130, 130);
+}
+.calculator.dark {
+  background: #1B1B1B;
+}
+.calculator.dark #clear {
+  background: #4c35aa;
+  color: #fff;
+}
+.calculator.dark #display {
+  color: #f8fafb;
+}
+.calculator.dark .btn__number {
+  background: #8efda6;
+  color: #000;
+  font-weight: 600;
+}
+.calculator.dark .btn__operator {
+  background: #f0db4f;
+  color: #aa00a4;
+  font-weight: 700;
+}
+.calculator.dark .btn-equal {
+  background: #f23b00;
+  color: #fff;
+}
+.calculator #display {
+  color: #0a1e23;
+  margin: 0 10px;
+  height: 150px;
+  width: auto;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  font-size: 30px;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+.calculator #clear {
+  background: #ffd5d8;
+  color: #fc4552;
+}
+.calculator #equal {
+  height: 130px;
+}
+
+.btn__number {
+  background: #c3caff;
+  color: #000;
+}
+
+.btn__operator {
+  background: #ffd0f0;
+  color: #f967f3;
+}
+
+.btn-equal {
+  background: #adf9e7;
+  color: #000;
+}
+
+.theme-toggler {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  cursor: pointer;
+  color: #fff;
+  z-index: 100;
+}
+.theme-toggler::before {
+  content: "";
+  position: absolute;
+  height: 30px;
+  width: 30px;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background-color: #333;
+  z-index: -1;
+}
+
+button {
+  width: 60px;
+  height: 60px;
+  border: none;
+  border-radius: 30px;
+  margin: 5px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+button:hover {
+  transform: scale(1.1);
+}
+
+.theme-toggler.active {
+  color: #333;
+}
+.theme-toggler.active::before {
+  background-color: #fff;
+}/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,213 @@
+@import "https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap";
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.menuToggle{
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    width: 50px;
+    height: 50px;
+    background: #000 url(../img/menu.png) no-repeat center;
+    background-size: 30px;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    cursor: pointer;
+
+    &.active{
+        background: #000 url(../img/close.png) no-repeat center;
+        background-size: 25px;
+        filter: invert(1);
+
+    }
+
+}
+
+.navegation{
+    background: #111;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.2s;
+
+    &.active{
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .navArea{
+        position: relative;
+        // background: aqua;
+        width: 50%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        ul{
+            li{
+                list-style: none;
+
+                &::before{
+                    content: "";
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: #f00;
+                    z-index: -1;
+                    opacity: 0;
+                    transition: 0.5s;
+                }
+
+                &:hover{
+                    &::before{
+                        opacity: 1;
+                    }
+
+                    &:nth-child(1){
+                        &::before{
+                            background: #905c49;
+                        }
+                    }
+
+                    &:nth-child(2){
+                        &::before{
+                            background: #ffde0f;
+                        }
+                    }
+                    &:nth-child(3){
+                        &::before{
+                            background: #d28759;
+                        }
+                    }
+                    &:nth-child(4){
+                        &::before{
+                            background: #72a785;
+                        }
+                    }
+                    &:nth-child(5){
+                        &::before{
+                            background: #01080e;
+                        }
+                    }
+                    &:nth-child(6){
+                        &::before{
+                            background: #137ac7;
+                        }
+                    }
+                    a{
+                        letter-spacing: 1px;
+                        color: #fff;
+                    }
+                }
+                a{
+                    font-size: 3em;
+                    font-weight: 600;
+                    text-decoration: none;
+                    color: rgba(255,255,255,.5);
+                    transition: 0.3s;
+
+                }
+
+
+
+
+            }
+        }
+    }
+
+    .imgArea{
+        position: relative;
+        width: 50%;
+        height: 100vh;
+        background: #000;
+
+        img{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+}
+
+
+@media (max-width: 768px){
+
+    .navegation{
+        .navArea{
+            // background: aqua;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 100;
+
+            ul{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+
+                li{
+                    &:hover{
+                        &::before{
+                            opacity: 0;
+                        }
+
+                        background: #ff355a;
+                    }
+
+                    background: #fff;
+                    margin: 5px 10px;
+                    border-radius: 8px;
+                    padding: 5px;
+
+                    a{
+                        color: #000;
+                        font-size: 2em;
+                        letter-spacing: 2px;
+                    }
+
+                }
+            }
+         
+        }
+
+        .imgArea{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: #000;
+
+            img{
+                opacity: 0.8;
+            }
+        }
+      
+    }
+}
